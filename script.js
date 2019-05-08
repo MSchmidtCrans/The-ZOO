@@ -1,39 +1,46 @@
 $(document).ready(function(){
 
+//Declare test variables
+let colorAnimal = [
+    "blue",
+    "black",
+    "brown"
+];
+
+let naamAnimal = [
+    "Ivo",
+    "Michael",
+    "Jeroen"
+]
+
 //Set main class
 class Animal {
-    constructor(eyes, year_of_birth) {
-        this.eyes = eyes;
+    constructor(color, year_of_birth) {
+        this.color = color;
         this.year_of_birth = year_of_birth;
-    }
-    eat() {
-        console.log("nomnomnom")
     }
 };
 
 //Extend subclass zoogdier form animal
 class Zoogdier extends Animal {
-    constructor(eyes, year_of_birth, vacht) {
-        super(eyes, year_of_birth); 
+    constructor(color, year_of_birth, vacht) {
+        super(color, year_of_birth); 
         this.vacht = vacht;
     }
 };
 
 //Extend subclass reptiel from animal
 class Reptiel extends Animal {
-    constructor(eyes, year_of_birth, eieren) {
-        super(eyes, year_of_birth); 
+    constructor(color, year_of_birth, eieren) {
+        super(color, year_of_birth); 
         this.eieren = eieren;
-    }
-    slijm() {
-        console.log("getver slimy")
     }
 };
 
 //Extend krokodil from subclass reptiel
 class Krokodil extends Reptiel {
-    constructor(eyes, year_of_birth, eieren, naam) {
-        super(eyes, year_of_birth, eieren); 
+    constructor(color, year_of_birth, eieren, naam) {
+        super(color, year_of_birth, eieren); 
         this.naam = naam;
     }
     hap() {
@@ -44,12 +51,9 @@ class Krokodil extends Reptiel {
 
 //Extend leeuw from subclass zoogdier
 class Leeuw extends Zoogdier {
-    constructor(eyes, year_of_birth, vacht, naam) {
-        super(eyes, year_of_birth, vacht); 
+    constructor(color, year_of_birth, vacht, naam) {
+        super(color, year_of_birth, vacht); 
         this.naam = naam;
-    }
-    roar() {
-        console.log("bruuuuuuuul")
     }
 };
 
@@ -59,11 +63,13 @@ class park {
         this.name = name;
         this.collection = [];
     }
-    //Generate random number function
+
+    //Generate random number function method
     randomNmbr(min, max) {
         return Math.floor(Math.random() * (max - min + 1) ) + min;
       };
-    //Fill collection with random animals
+
+    //Fill collection with random animals method
     addAnimals(number) {
         for (let count = 0; count <= number-1; count++) {
             let randomVal = this.randomNmbr(0, 1);
@@ -73,8 +79,10 @@ class park {
                 this.collection.push(new Krokodil());
             }
         };
+        document.getElementById('fillPar').innerHTML = 'Number of animals added: ' + number; 
     }
-    //Statistics enquiry
+
+    //Statistics enquiry method
     stats() {
         let countLeeuw = 0;
         let countKrokodil = 0;
@@ -83,21 +91,21 @@ class park {
             else if (element.constructor.name === 'Krokodil'){countKrokodil += 1};
            });
            
-           //Print to console
-            console.log(countLeeuw);
-            console.log(countKrokodil);
+           //Insert to html
+           document.getElementById('showStats').innerHTML = 'Number of lions added: ' + countLeeuw + '<br>' + 'Number of krokodiles added: ' + countKrokodil;
         }
     }
 
 let mikeZoo = new park("Michael ZOO");
 
-console.log(mikeZoo.name);
-console.log(mikeZoo.collection);
+//Buttons to activate methods
+$('#fillBtn').click(function() {
+mikeZoo.addAnimals(100);
+});
 
-
-mikeZoo.addAnimals(10);
-
+$('#statsBtn').click(function() {
 mikeZoo.stats();
+});
 
 //Final bracket
 });
