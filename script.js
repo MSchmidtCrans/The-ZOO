@@ -53,7 +53,7 @@ class Leeuw extends Zoogdier {
     }
 };
 
-//Create a class with standard methods
+//Create a class with methods
 class park {
     constructor(name) {
         this.name = name;
@@ -78,22 +78,12 @@ class park {
     stats() {
         let countLeeuw = 0;
         let countKrokodil = 0;
-        let test = typeof(this.collection[0]);
-        console.log(test);
-        console.log(this.collection[1]);
-
-        this.collection.forEach(function(element){
+        this.collection.forEach( function(element) {
             if (element.constructor.name === 'Leeuw'){countLeeuw += 1}
+            else if (element.constructor.name === 'Krokodil'){countKrokodil += 1};
            });
-/*
-        for (let count = 0; count <= this.collection.length-1; count++) {
-            if(this.constructor.name == "Leeuw") {
-                countLeeuw += 1;
-            } else if (this.collection[count] == "Krokodil") {
-                    countKrokodil += 1;
-                }
-            };
-*/            
+           
+           //Print to console
             console.log(countLeeuw);
             console.log(countKrokodil);
         }
