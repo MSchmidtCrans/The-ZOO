@@ -81,13 +81,19 @@ class park {
         let test = typeof(this.collection[0]);
         console.log(test);
         console.log(this.collection[1]);
+
+        this.collection.forEach(function(element){
+            if (element.constructor.name === 'Leeuw'){countLeeuw += 1}
+           });
+/*
         for (let count = 0; count <= this.collection.length-1; count++) {
-            if(this.collection[count] == "Leeuw") {
+            if(this.constructor.name == "Leeuw") {
                 countLeeuw += 1;
             } else if (this.collection[count] == "Krokodil") {
                     countKrokodil += 1;
                 }
             };
+*/            
             console.log(countLeeuw);
             console.log(countKrokodil);
         }
