@@ -57,6 +57,12 @@ class Leeuw extends Zoogdier {
     }
 };
 
+class helper {
+    static randomNmbr(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+      };
+}
+
 //Create a class with methods
 class park {
     constructor(name) {
@@ -64,17 +70,22 @@ class park {
         this.collection = [];
     }
 
-    //Generate random number function method
+    //Generate random number function - method
     randomNmbr(min, max) {
         return Math.floor(Math.random() * (max - min + 1) ) + min;
       };
 
-    //Fill collection with random animals method
+    //Fill collection with random animals - method
     addAnimals(number) {
+        let colorVal = "";
+        let yearBirthVal = "";
+        let vachtVal = "";
+        let nameVal = "";
+
         for (let count = 0; count <= number-1; count++) {
             let randomVal = this.randomNmbr(0, 1);
             if (randomVal == 0) {
-                this.collection.push(new Leeuw());
+                this.collection.push(new Leeuw(colorVal, yearBirthVal, vachtVal, nameVal));
             } else if (randomVal == 1) {
                 this.collection.push(new Krokodil());
             }
@@ -82,7 +93,7 @@ class park {
         document.getElementById('fillPar').innerHTML = 'Number of animals added: ' + number; 
     }
 
-    //Statistics enquiry method
+    //Statistics enquiry - method
     stats() {
         let countLeeuw = 0;
         let countKrokodil = 0;
@@ -101,6 +112,7 @@ let mikeZoo = new park("Michael ZOO");
 //Buttons to activate methods
 $('#fillBtn').click(function() {
 mikeZoo.addAnimals(100);
+console.log(mikeZoo);
 });
 
 $('#statsBtn').click(function() {
