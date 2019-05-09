@@ -17,59 +17,46 @@ let naamAnimal = [
 
 //Set main class
 class Animal {
-    constructor(color, year_of_birth) {
+    constructor(name, color, year_of_birth) {
         this.color = color;
         this.year_of_birth = year_of_birth;
+        this.name = this.createName();
+    }
+    createName() {
+        let randomVal = randomNmbr (0, 2); 
+        return naamAnimal[randomVal];
     }
 };
 
 //Extend subclass zoogdier form animal
 class Zoogdier extends Animal {
-    constructor(color, year_of_birth, vacht) {
-        super(color, year_of_birth); 
-        this.vacht = vacht;
+    constructor(name, color, year_of_birth) {
+        super(name, color, year_of_birth); 
     }
 };
 
 //Extend subclass reptiel from animal
 class Reptiel extends Animal {
-    constructor(color, year_of_birth, eieren) {
-        super(color, year_of_birth); 
-        this.eieren = eieren;
+    constructor(name, color, year_of_birth) {
+        super(name, color, year_of_birth); 
     }
 };
 
 //Extend krokodil from subclass reptiel
 class Krokodil extends Reptiel {
-    constructor(color, year_of_birth, eieren, naam) {
-        super(color, year_of_birth, eieren); 
-        this.naam = this.createName();
-    }
-    createName() {
-        let randomVal = randomNmbr (0, 2); 
-        return naamAnimal[randomVal];
-    }
-    
+    constructor(name, color, year_of_birth) {
+        super(name, color, year_of_birth); 
 };
+}
 
 
 //Extend leeuw from subclass zoogdier
 class Leeuw extends Zoogdier {
-    constructor(color, year_of_birth, vacht, naam) {
-        super(color, year_of_birth, vacht); 
-        this.naam = this.createName();
-    }
-    createName() {
-        let randomVal = randomNmbr (0, 2); 
-        return naamAnimal[randomVal];
+    constructor(name, color, year_of_birth) {
+        super(name, color, year_of_birth); 
     }
 };
 
-class helper {
-    static randomNmbr(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) ) + min;
-      };
-}
 
 //Create a class with methods
 class park {
@@ -78,27 +65,20 @@ class park {
         this.collection = [];
     }
 
-    //Generate random number function - method
-    randomNmbr(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) ) + min;
-      };
-
     //Fill collection with random animals - method
     addAnimals(number) {
         let colorVal = "";
         let yearBirthVal = "";
-        let vachtVal = "";
-        let nameVal = "";
         let randomVal = 0;
         for (let count = 0; count <= number-1; count++) {
-            randomVal = this.randomNmbr (0, 4); colorVal = colorAnimal[randomVal];//add color to class
-            yearBirthVal = this.randomNmbr (1998, 2019);//add birth year to class
+            randomVal = randomNmbr (0, 4); colorVal = colorAnimal[randomVal];//add color to class
+            yearBirthVal = randomNmbr (1998, 2019);//add birth year to class
 
-            randomVal = this.randomNmbr(0, 1);
+            randomVal = randomNmbr(0, 1);
             if (randomVal == 0) {
-                this.collection.push(new Leeuw(colorVal, yearBirthVal, vachtVal, nameVal));
+                this.collection.push(new Leeuw(this.name, colorVal, yearBirthVal));
             } else if (randomVal == 1) {
-                this.collection.push(new Krokodil(colorVal, yearBirthVal, vachtVal, nameVal));
+                this.collection.push(new Krokodil(this.name, colorVal, yearBirthVal));
             }
         };
         document.getElementById('fillPar').innerHTML = 'Number of animals added: ' + number; 
@@ -118,11 +98,11 @@ class park {
         }
     }
 
-//Generate random number function - method
+/*Generate random number function - method
 function randomNmbr(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
     };
-
+*/
 let mikeZoo = new park("Michael ZOO");
 
 //Buttons to activate methods

@@ -9,4 +9,8 @@ An introduction and exercise in Object oriented programming
 
 4. Create a button to call statistics on the zoo -Done-
 
-5. Randomize and fill the subclass properties (name, color etc..)
+5. Randomize and fill the subclass properties (name, color etc..) -Done-
+
+6. Make a function to autocreate a name upon creating/pushing a new animal -Done-
+
+7. Create and use a Helper.js file to use with general functions
