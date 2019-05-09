@@ -23,7 +23,7 @@ class Animal {
         this.name = this.createName();
     }
     createName() {
-        let randomVal = randomNmbr (0, 2); 
+        let randomVal = helperFnct.randomNmbr (0, 2); 
         return naamAnimal[randomVal];
     }
 };
@@ -71,10 +71,10 @@ class park {
         let yearBirthVal = "";
         let randomVal = 0;
         for (let count = 0; count <= number-1; count++) {
-            randomVal = randomNmbr (0, 4); colorVal = colorAnimal[randomVal];//add color to class
-            yearBirthVal = randomNmbr (1998, 2019);//add birth year to class
+            randomVal = helperFnct.randomNmbr (0, 4); colorVal = colorAnimal[randomVal];//add color to class
+            yearBirthVal = helperFnct.randomNmbr (1998, 2019);//add birth year to class
 
-            randomVal = randomNmbr(0, 1);
+            randomVal = helperFnct.randomNmbr(0, 1);
             if (randomVal == 0) {
                 this.collection.push(new Leeuw(this.name, colorVal, yearBirthVal));
             } else if (randomVal == 1) {
