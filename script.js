@@ -92,6 +92,9 @@ class park {
             if (element.constructor.name === 'Leeuw'){countLeeuw += 1}
             else if (element.constructor.name === 'Krokodil'){countKrokodil += 1};
            });
+
+        let collColor =  this.collection[1].color = "brown";  
+           console.log(collColor);
            
            //Insert to html
            document.getElementById('showStats').innerHTML = 'Number of lions: ' + countLeeuw + '<br>' + 'Number of krokodiles: ' + countKrokodil;
