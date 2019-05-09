@@ -99,14 +99,29 @@ class park {
            //Insert to html
            document.getElementById('showStats').innerHTML = 'Number of lions: ' + countLeeuw + '<br>' + 'Number of krokodiles: ' + countKrokodil;
         }
-    }
+    
+
+    //Create text arch on frontpage for the entry of the zoo based on the park name
+    nameEntry() {
+        let nameLength = this.name.length;
+        let deg = -75;
+        for (let i=0; i<=nameLength-1; i++) {
+            let div = document.createElement("DIV");
+            div.innerHTML = this.name[i];
+            div.style.transform = "rotate(" + deg + "deg)";
+            document.getElementById("banner").appendChild(div);
+            console.log(deg);
+            deg += 150 / nameLength+1;
+        }
+    }    
+}
 
 /*Generate random number function - method
 function randomNmbr(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
     };
 */
-let mikeZoo = new park("Michael ZOO");
+let mikeZoo = new park("Michael dieren");
 
 //Buttons to activate methods
 $('#fillBtn').click(function() {
@@ -117,6 +132,8 @@ console.log(mikeZoo);
 $('#statsBtn').click(function() {
 mikeZoo.stats();
 });
+
+mikeZoo.nameEntry();
 
 //Final bracket
 });

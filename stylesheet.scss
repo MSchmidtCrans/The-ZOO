@@ -5,52 +5,23 @@ $deg: 75;
     position: relative;
     width: 100%;
     height:300px;
-    margin: 75px auto auto auto;
+    margin: 85px auto auto auto;
     font-size: 70px;
   }
 
-  .banner-curved span {
+  .banner-curved div {
     position: absolute;
     bottom: 0;
     left: 50%;
     width: 70px;
-    height: 400px;  
+    height: 350px;  
     text-align: center;
     transform-origin: bottom center;
     font-weight: bold;
   }
 
+  /*
   .banner-curved span:nth-of-type(1)  {
-    transform: rotate(75deg);
-  }
-  .banner-curved span:nth-of-type(2)  {
-    transform: rotate(58deg);
-  }
-  
-  .banner-curved span:nth-of-type(3)  {
-    transform: rotate(41deg);
-  }
-  .banner-curved span:nth-of-type(4)  {
-    transform: rotate(24deg);
-  }
-  
-  .banner-curved span:nth-of-type(5)  {
-    transform: rotate(7deg);
-  }
-  .banner-curved span:nth-of-type(6)  {
-    transform: rotate(-10deg);
-  }
-  
-  .banner-curved span:nth-of-type(7)  {
-    transform: rotate(-27deg);
-  }
-  .banner-curved span:nth-of-type(8)  {
-    transform: rotate(-41deg);
-  }
-  
-  .banner-curved span:nth-of-type(9)  {
-    transform: rotate(-58deg);
-  }
-  .banner-curved span:nth-of-type(10)  {
     transform: rotate(-75deg);
   }
+  */
