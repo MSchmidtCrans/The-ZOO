@@ -4,7 +4,9 @@ $(document).ready(function(){
 let colorAnimal = [
     "blue",
     "black",
-    "brown"
+    "brown",
+    "Green",
+    "Pink"
 ];
 
 let naamAnimal = [
@@ -41,11 +43,13 @@ class Reptiel extends Animal {
 class Krokodil extends Reptiel {
     constructor(color, year_of_birth, eieren, naam) {
         super(color, year_of_birth, eieren); 
-        this.naam = naam;
+        this.naam = this.createName();
     }
-    hap() {
-        console.log("Hap weg.......")
+    createName() {
+        let randomVal = randomNmbr (0, 2); 
+        return naamAnimal[randomVal];
     }
+    
 };
 
 
@@ -53,7 +57,11 @@ class Krokodil extends Reptiel {
 class Leeuw extends Zoogdier {
     constructor(color, year_of_birth, vacht, naam) {
         super(color, year_of_birth, vacht); 
-        this.naam = naam;
+        this.naam = this.createName();
+    }
+    createName() {
+        let randomVal = randomNmbr (0, 2); 
+        return naamAnimal[randomVal];
     }
 };
 
@@ -81,13 +89,16 @@ class park {
         let yearBirthVal = "";
         let vachtVal = "";
         let nameVal = "";
-
+        let randomVal = 0;
         for (let count = 0; count <= number-1; count++) {
-            let randomVal = this.randomNmbr(0, 1);
+            randomVal = this.randomNmbr (0, 4); colorVal = colorAnimal[randomVal];//add color to class
+            yearBirthVal = this.randomNmbr (1998, 2019);//add birth year to class
+
+            randomVal = this.randomNmbr(0, 1);
             if (randomVal == 0) {
                 this.collection.push(new Leeuw(colorVal, yearBirthVal, vachtVal, nameVal));
             } else if (randomVal == 1) {
-                this.collection.push(new Krokodil());
+                this.collection.push(new Krokodil(colorVal, yearBirthVal, vachtVal, nameVal));
             }
         };
         document.getElementById('fillPar').innerHTML = 'Number of animals added: ' + number; 
@@ -103,9 +114,14 @@ class park {
            });
            
            //Insert to html
-           document.getElementById('showStats').innerHTML = 'Number of lions added: ' + countLeeuw + '<br>' + 'Number of krokodiles added: ' + countKrokodil;
+           document.getElementById('showStats').innerHTML = 'Number of lions: ' + countLeeuw + '<br>' + 'Number of krokodiles: ' + countKrokodil;
         }
     }
+
+//Generate random number function - method
+function randomNmbr(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+    };
 
 let mikeZoo = new park("Michael ZOO");
 
