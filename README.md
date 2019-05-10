@@ -4,7 +4,7 @@ Demo: <a href = "https://supersmitty2018.github.io/The-ZOO/"><img src="thumbnail
 
 An introduction and exercise in Object oriented programming
 
-1. Think of zoo data structure on paper -Done-
+1. Think of zoo data structure on paper -Done- (see photo below)
 
 2. Use JS to script the data structure into classes -Done-
 
@@ -21,3 +21,5 @@ An introduction and exercise in Object oriented programming
 8. Create HTML frontpage with CSS pre-processor (SASS) -DONE-
 
 9. Add ticketsale to frontpage -DONE-
+
+<img src="IMG_4252.jpg" alt="datastructure on paper">

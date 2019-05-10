@@ -125,11 +125,11 @@ class park {
 
 $(".imageContainer").mouseenter(function() {
     $(".imageContainer").css("background-image", "url('frontgateopen.svg')");
-    $("button").css("display", "inline-block");
+    $(".gateBtnCl").css("display", "inline-block");
 })  
 $(".imageContainer").mouseleave(function() {
     $(".imageContainer").css("background-image", "url('Frontgate.svg')");
-    $("button").css("display", "none");
+    $(".gateBtnCl").css("display", "none");
 })
 $(".gateBtnCl").click(function() {
     mikeZoo.ticketSale();
@@ -140,7 +140,7 @@ $(".gateBtnCl").click(function() {
 let mikeZoo = new park("Mike's dierentuin");
 
 //activate methods
-mikeZoo.addAnimals(100);
+mikeZoo.addAnimals(1000);
 mikeZoo.stats();
 mikeZoo.nameEntry();
 

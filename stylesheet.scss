@@ -31,7 +31,7 @@ box-sizing: border-box;
 
 
   .imageGateContainer {
-    position: relative;
+    
     width: 100%;
     margin: auto;
     background-repeat: no-repeat;
@@ -39,6 +39,7 @@ box-sizing: border-box;
   }
 
   .imageContainer {
+   
     background-image: url("Frontgate.svg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -47,19 +48,28 @@ box-sizing: border-box;
     margin: auto;
   }
 
-  .gateP {
+
+  .statsDiv {
     position: absolute;
-    display: inline;
     left: 5px;
     top: 0px;
+    padding: 15px;
     text-align: left;
+    color: white;
+    font-size: 20px;
+    background-color: rgba(102, 102, 102, 0.4);
+    border: 1px solid grey;
+    font-family: 'Gugi', cursive;
   }
 
-  .imageGateContainer button {
+  .gateBtnCl {
     display: None;
     position: absolute;
     color: green;
+    margin-top: 110px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 80px;
+    height: auto;
   }
