@@ -63,6 +63,7 @@ class park {
     constructor(name) {
         this.name = name;
         this.collection = [];
+        this.numberBorn = 0;
     }
 
     //Fill collection with random animals - method
@@ -81,7 +82,8 @@ class park {
                 this.collection.push(new Krokodil(this.name, colorVal, yearBirthVal));
             }
         };
-        document.getElementById('fillPar').innerHTML = 'Number of animals added: ' + number; 
+        this.numberBorn = number;
+         
     }
 
     //Statistics enquiry - method
@@ -97,7 +99,7 @@ class park {
            console.log(collColor);
            
            //Insert to html
-           document.getElementById('showStats').innerHTML = 'Number of lions: ' + countLeeuw + '<br>' + 'Number of krokodiles: ' + countKrokodil;
+           document.getElementById('showStats').innerHTML = 'Number of animals born: ' + this.numberBorn + '</br>' + 'Number of lions: ' + countLeeuw + '<br>' + 'Number of krokodiles: ' + countKrokodil;
         }
     
 
@@ -110,29 +112,25 @@ class park {
             div.innerHTML = this.name[i];
             div.style.transform = "rotate(" + deg + "deg)";
             document.getElementById("banner").appendChild(div);
-            console.log(deg);
             deg += 150 / nameLength+1;
         }
     }    
 }
 
-/*Generate random number function - method
-function randomNmbr(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-    };
-*/
-let mikeZoo = new park("Michael dieren");
+$(".gateFrontPage").mouseenter(function() {
+    $(".gateFrontPage").attr("src", "frontgateopen.svg");
+})  
+$(".gateFrontPage").mouseleave(function() {
+    $(".gateFrontPage").attr("src", "Frontgate.svg");
+})  
 
-//Buttons to activate methods
-$('#fillBtn').click(function() {
+
+
+let mikeZoo = new park("Mike's dierentuin");
+
+//activate methods
 mikeZoo.addAnimals(100);
-console.log(mikeZoo);
-});
-
-$('#statsBtn').click(function() {
 mikeZoo.stats();
-});
-
 mikeZoo.nameEntry();
 
 //Final bracket
