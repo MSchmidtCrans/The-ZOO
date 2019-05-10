@@ -1,6 +1,6 @@
 # The-ZOO
 
-Demo: https://supersmitty2018.github.io/The-ZOO/
+Demo: <a href = "https://supersmitty2018.github.io/The-ZOO/"><img src="thumbnail.jpg"></a>
 
 An introduction and exercise in Object oriented programming
 
