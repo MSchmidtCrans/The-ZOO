@@ -1,4 +1,7 @@
 # The-ZOO
+
+Demo: https://supersmitty2018.github.io/The-ZOO/
+
 An introduction and exercise in Object oriented programming
 
 1. Think of zoo data structure on paper -Done-
@@ -17,4 +20,4 @@ An introduction and exercise in Object oriented programming
 
 8. Create HTML frontpage with CSS pre-processor (SASS) -DONE-
 
-9. Add ticketsale to frontpage
+9. Add ticketsale to frontpage -DONE-
