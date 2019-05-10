@@ -64,6 +64,7 @@ class park {
         this.name = name;
         this.collection = [];
         this.numberBorn = 0;
+        this.ticketNr = 0;
     }
 
     //Fill collection with random animals - method
@@ -102,6 +103,11 @@ class park {
            document.getElementById('showStats').innerHTML = 'Number of animals born: ' + this.numberBorn + '</br>' + 'Number of lions: ' + countLeeuw + '<br>' + 'Number of krokodiles: ' + countKrokodil;
         }
     
+    ticketSale() {
+        this.ticketNr = helperFnct.randomNmbr(0, 10000);
+        alert("Your ticketnumber: " +this.ticketNr)
+    }    
+
 
     //Create text arch on frontpage for the entry of the zoo based on the park name
     nameEntry() {
@@ -117,12 +123,17 @@ class park {
     }    
 }
 
-$(".gateFrontPage").mouseenter(function() {
-    $(".gateFrontPage").attr("src", "frontgateopen.svg");
+$(".imageContainer").mouseenter(function() {
+    $(".imageContainer").css("background-image", "url('frontgateopen.svg')");
+    $("button").css("display", "inline-block");
 })  
-$(".gateFrontPage").mouseleave(function() {
-    $(".gateFrontPage").attr("src", "Frontgate.svg");
-})  
+$(".imageContainer").mouseleave(function() {
+    $(".imageContainer").css("background-image", "url('Frontgate.svg')");
+    $("button").css("display", "none");
+})
+$(".gateBtnCl").click(function() {
+    mikeZoo.ticketSale();
+})
 
 
 

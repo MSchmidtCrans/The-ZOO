@@ -15,4 +15,6 @@ An introduction and exercise in Object oriented programming
 
 7. Create and use a Helper.js file to use with general functions -DONE-
 
-8. Create HTML frontpage with CSS pre-processor (SASS)
+8. Create HTML frontpage with CSS pre-processor (SASS) -DONE-
+
+9. Add ticketsale to frontpage

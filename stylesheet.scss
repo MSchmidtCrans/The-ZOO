@@ -3,6 +3,7 @@ box-sizing: border-box;
 }
 
 .mainContainer {
+  width: 100%;
   background-image: url("land.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,35 +29,37 @@ box-sizing: border-box;
     transition: transform 3s;
   }
 
-.gateContainer {
-  width: 100%;
-  padding: 1px;
-  margin: auto;
-}
 
   .imageGateContainer {
     position: relative;
     width: 100%;
-    padding: 1px;
     margin: auto;
     background-repeat: no-repeat;
     text-align: center;
   }
 
-  .gate {
+  .imageContainer {
+    background-image: url("Frontgate.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 370px;
+    height: 370px;
+    margin: auto;
+  }
+
+  .gateP {
     position: absolute;
+    display: inline;
     left: 5px;
     top: 0px;
     text-align: left;
   }
 
-  .gateBtn {
+  .imageGateContainer button {
+    display: None;
     position: absolute;
+    color: green;
+    top: 50%;
     left: 50%;
-    bottom: 50%;
-    z-index: 0;
-  }
-
-  .gateFrontPage {
-    z-index: 1;
+    transform: translate(-50%, -50%);
   }
